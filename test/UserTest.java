@@ -37,4 +37,8 @@ public class UserTest extends UnitTest {
     	assertEquals(bob.accountInformation.zipCode, "55426");
     }
 
+    @After
+    public void takeDown() {
+        bob = null;
+    }
 }

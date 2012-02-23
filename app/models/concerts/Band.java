@@ -4,7 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
-import play.data.validation.();
+import play.data.validation.*;
 
 @Entity
 public class Band extends Model {

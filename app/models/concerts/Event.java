@@ -6,6 +6,7 @@ import javax.persistence.*;
 import play.db.jpa.*;
 import play.data.validation.*;
 
+@Entity
 public class Event extends Model {
 	@OneToMany(mappedBy="concertEvent")
 	public List<Band> bands;
