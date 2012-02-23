@@ -12,4 +12,8 @@ public class Band extends Model {
 
 	@ManyToOne
 	public Event concertEvent;
+
+	public Band(String bandName) {
+		this.bandName = bandName;
+	}
 }

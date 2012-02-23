@@ -12,4 +12,10 @@ public class Event extends Model {
 
 	public Date eventDate;
 	public String startTime;
+
+	public Event() {}
+	public Event(Date eventDate, String startTime) {
+		this.eventDate = eventDate;
+		this.startTime = startTime;
+	}
 }

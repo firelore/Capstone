@@ -18,4 +18,18 @@ public class Venue extends Model {
 	public String state;
 	public String zipCode;
 	public String phoneNumber;
+
+	public Venue() {}
+	public Venue(String hallName, String address1,
+				String address2, String city, String state,
+				String zipCode, String phoneNumber) 
+	{
+		this.hallName = hallName;
+		this.address1 = address1;
+		this.address2 = address2;
+		this.city = city;
+		this.state = state;
+		this.zipCode = zipCode;
+		this.phoneNumber = phoneNumber;
+	}
 }
