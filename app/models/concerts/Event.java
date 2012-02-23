@@ -11,11 +11,13 @@ public class Event extends Model {
 	@OneToMany(mappedBy="concertEvent")
 	public List<Band> bands;
 
-	public Date eventDate;
+	public String eventName;
+	public String eventDate;
 	public String startTime;
 
 	public Event() {}
-	public Event(Date eventDate, String startTime) {
+	public Event(String eventName, String eventDate, String startTime) {
+		this.eventName = eventName;
 		this.eventDate = eventDate;
 		this.startTime = startTime;
 	}
