@@ -4,18 +4,18 @@ import play.test.*;
 import models.user.*;
 
 public class UserTest extends UnitTest {
-	User bob;
+	UserLogin bob;
 
 	@Before
 	public void setup() {
 		Fixtures.deleteDatabase();
 
-		bob = new User("bob@gmail.com", "secret").save();
+		bob = new UserLogin("bob@gmail.com", "secret").save();
 	}
 
     @Test
     public void createAndRetrieveUser() {
-    	User bob = User.find("byEmail", "bob@gmail.com").first();
+    	UserLogin bob = UserLogin.find("byEmail", "bob@gmail.com").first();
 
     	assertNotNull(bob);
     	assertEquals("bob@gmail.com", bob.email);
@@ -23,7 +23,7 @@ public class UserTest extends UnitTest {
 
     @Test
     public void createAndRetrieveUserDetails() {
-    	UserDetails details = new UserDetails(
+    	UserProfile details = new UserProfile(
     		"123 West Sesame Street",
     		"Melrose",
     		"Minnesota",
