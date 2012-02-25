@@ -13,8 +13,8 @@ public class ConcertsTest extends UnitTest {
 		Fixtures.deleteDatabase();
 
 		megadeth = new Band("Megadeth").save();
-		rockopalypse = new Event("Rockopalypse", "April 1st, 2012", "07:30pm").save();
-		excel = new Venue("Excel Energy Center", "123 Street", null, 
+		rockopalypse = new Event("Rockopalypse", new Date(1333326600)).save();
+		excel = new Venue("Excel Energy Center", "123 Street", 
 						"St. Paul", "MN", "12345", "612-555-5555").save();
 	}
 
@@ -33,7 +33,6 @@ public class ConcertsTest extends UnitTest {
 		assertNotNull(venue);
 		assertEquals("Excel Energy Center", venue.hallName);
 		assertEquals("123 Street", venue.address1);
-		assertNull(null, venue.address2);
 		assertEquals("St. Paul", venue.city);
 		assertEquals("MN", venue.state);
 		assertEquals("12345", venue.zipCode);
@@ -46,7 +45,6 @@ public class ConcertsTest extends UnitTest {
 
 		assertNotNull(event);
 		assertEquals("Rockopalypse", event.eventName);
-		assertEquals("07:30pm", event.startTime);
-		assertEquals("April 1st, 2012", "April 1st, 2012");
+		assertEquals(new Date(1333326600), event.eventDate);
 	}
 }

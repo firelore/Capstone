@@ -8,17 +8,19 @@ import play.data.validation.*;
 
 @Entity
 public class Event extends Model {
-	@OneToMany(mappedBy="concertEvent")
+	@ManyToMany
 	public List<Band> bands;
 
+	@ManyToMany(mappedBy="events", cascade=CascadeType.PERSIST)
+	public List<Venue> venues;
+
 	public String eventName;
-	public String eventDate;
-	public String startTime;
+	public Date eventDate;
+	public String genre;
 
 	public Event() {}
-	public Event(String eventName, String eventDate, String startTime) {
+	public Event(String eventName, Date eventDate) {
 		this.eventName = eventName;
 		this.eventDate = eventDate;
-		this.startTime = startTime;
 	}
 }

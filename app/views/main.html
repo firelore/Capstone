@@ -4,13 +4,44 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta charset="${_response_encoding}">
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.css'}">
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
     </head>
     <body>
-        #{doLayout /}
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="@{Application.index}">
+                        Home Grown Productions
+                    </a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li><a href="@{Application.index}">Home</a></li>
+                            <li><a href="@{Events.index}">All Shows</a></li>
+
+                        </ul>
+                        <form class="navbar-search"
+                            action="" placeholder="Search">
+                            <input class="search-query span3" type="text" placeholder="Search">
+                        </form>
+                        <ul class="nav pull-right" style="width:250px;">
+                            <li><a href="#">Shopping Cart</a></li>
+                            <li class="divider-vertical"></li>
+                            <li class="dropdown"><a href="#">Account</a></li>
+
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="container">
+            #{doLayout /}
+        </div>
     </body>
 </html>

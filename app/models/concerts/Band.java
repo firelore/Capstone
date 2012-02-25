@@ -10,8 +10,8 @@ import play.data.validation.*;
 public class Band extends Model {
 	public String bandName;
 
-	@ManyToOne
-	public Event concertEvent;
+	@ManyToMany(mappedBy="bands", cascade=CascadeType.PERSIST)
+	public List<Event> concertEvent;
 
 	public Band(String bandName) {
 		this.bandName = bandName;

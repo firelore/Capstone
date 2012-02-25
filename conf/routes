@@ -4,6 +4,8 @@
 
 # Home page
 GET     /                                       Application.index
+GET		/Events									Events.index
+GET		/Events/events 							Events.event
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
