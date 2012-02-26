@@ -6,6 +6,7 @@
 GET     /                                       Application.index
 GET		/Events									Events.index
 GET		/Events/events 							Events.event
+POST	/Searcher/searchBand					Searcher.searchBand
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

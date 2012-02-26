@@ -23,11 +23,14 @@
                             <li><a href="@{Application.index}">Home</a></li>
                             <li><a href="@{Events.index}">All Shows</a></li>
                         </ul>
-                        <form class="navbar-search"
-                            action="" placeholder="Search">
-                            <input id="input-append" class="search-query span3" type="text" placeholder="Search">
+                        <!-- <form class="navbar-search"
+                            action="@{Searcher.searchBand(search)}" placeholder="Search"> -->
+                            #{form @Searcher.searchBand(), class:'navbar-search', method:'GET'}
+                            <input id="input-append" name="query" class="search-query span3" type="text" placeholder="Search">
                             <i class="icon-search icon-white add-on"></i>
-                        </form>
+                            </input
+                        <!-- </form> -->
+                        #{/form}
                         <ul class="nav pull-right" style="width:250px;">
                             <li><a href="#">Shopping Cart</a></li>
                             <li class="divider-vertical"></li>
