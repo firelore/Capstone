@@ -1995,6 +1995,9 @@ button.btn.small, input[type="submit"].btn.small {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
+button.add-on {
+  min-height:28px;
+}
 .btn-group {
   position: relative;
   *zoom: 1;
