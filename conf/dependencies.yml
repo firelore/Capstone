@@ -4,3 +4,4 @@ require:
     - play -> crud
     - play -> secure
     - play -> search head
+    - play -> heroku 0.2
