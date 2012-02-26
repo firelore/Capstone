@@ -13,48 +13,7 @@
         #{get 'moreScripts' /}
     </head>
     <body>
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="brand" href="@{Application.index}">
-                        Home Grown Productions
-                    </a> 
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li><a href="@{Application.index}">Home</a></li>
-                            <li><a href="@{Events.index}">All Shows</a></li>
-                        </ul>
-                        
-                        #{form @Searcher.searchBand(), class:'navbar-search', method:'GET'}
-                            <div class="input-append" class="span3">
-                                <input name="query" class="search-query span3" type="text" placeholder="Search">
-                                </input>
-                                    <button class="add-on">
-                                    <i class="icon-search"></i>
-                                </button>
-                                
-                            </div>
-                        #{/form}
-
-                        <ul class="nav pull-right">
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li class="divider-vertical"></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    Account
-                                    <b class="caret"></b>
-                                </a>
-                                
-                                <ul class="dropdown-menu">
-                                    <li><a href="">Sign in</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
+        #{navbar /}
         <div id="container-fluid" class="row-fluid">
             #{sidebar /}
             <div class="span9">

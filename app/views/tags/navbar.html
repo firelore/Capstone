@@ -6,7 +6,10 @@
 	        </a> 
 	        <div class="nav-collapse">
 	            <ul class="nav">
-	                <li><a href="@{Application.index}">Home</a></li>
+	                <li>
+	                	<a href="@{Application.index}"><i class="icon-home icon-white"></i></a>
+
+	                </li>
 	                <li><a href="@{Events.index}">All Shows</a></li>
 	            </ul>
 	            
@@ -22,7 +25,7 @@
 	            #{/form}
 
 	            <ul class="nav pull-right">
-	                <li><a href="#">Shopping Cart</a></li>
+	                <li><a href="#">Shopping Cart <i class="icon-shopping-cart icon-white"></i></a></li>
 	                <li class="divider-vertical"></li>
 	                <li class="dropdown">
 	                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -30,8 +33,12 @@
 	                        <b class="caret"></b>
 	                    </a>
 	                    
-	                    <ul class="dropdown-menu">
+	                    <ul class="dropdown-menu nav-list">
+	                    	<li class="nav-header">Account Options</li>
 	                        <li><a href="">Sign in</a></li>
+	                        <li class="nav-header">Don't have an account?
+	                       		<a href="@{Account.create()}">Create one now!</a>
+	                        </li>
 	                    </ul>
 	                </li>
 	            </ul>

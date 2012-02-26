@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{form @Account.createAccount(), class:'navbar-search well', method:'POST'}
+	<fieldset>
+		<legend>Create Account</legend>
+		<div class="control-group">
+			<label class="control-label" for="email">Email address:</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="email">
+			</div>
+			<label class="control-label" for="password">Password:</label>
+			<div class="controls">
+				<input type="password" id="password" class="input-xlarge">
+			</div>
+			<button class="btn btn-primary">Create!</button>
+			<button class="btn btn-danger">Cancel</button>
+		</div>
+	</fieldset>
+#{/form}

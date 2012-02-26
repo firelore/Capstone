@@ -7,6 +7,8 @@ GET     /                                       Application.index
 GET		/Events									Events.index
 GET		/Events/events 							Events.event
 POST	/Searcher/searchBand					Searcher.searchBand
+GET		/Account/create							Account.create
+POST	/Account/create							Account.createAccount
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
