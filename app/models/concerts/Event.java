@@ -16,6 +16,9 @@ public class Event extends Model {
 	@ManyToMany(mappedBy="events", cascade=CascadeType.PERSIST)
 	public List<Venue> venues;
 
+	@OneToMany(mappedBy="event")
+	public List<Ticket> tickets;
+
 	@Field
 	public String eventName;
 	

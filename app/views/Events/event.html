@@ -1,4 +1,9 @@
 #{extends 'main.html' /}
 #{set title:'Home Grown - ' + event.eventName /}
 
-${event.eventName}
+<h1>${event.eventName}</h1>
+<p>
+	${event.eventDate.format('d MMMM, yyyy')}
+	${event.eventDate.format('h:mma')}
+	${event?.venues[0]?.hallName}
+</p>

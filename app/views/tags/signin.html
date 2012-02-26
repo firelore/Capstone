@@ -1,0 +1,32 @@
+<div id="signin-modal" class="modal hide fade">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>Sign In</h3>
+	</div>
+	#{form @Account.createAccount(), method:'POST'}
+	<div class="modal-body">
+		<div class="control-group">
+			<label class="control-label" for="email">
+				Email address:
+			</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" 
+					id="email">
+			</div>
+			<label class="control-label" for="password">
+				Password:
+			</label>
+			<div class="controls">
+				<input type="password" id="password" 
+					class="input-xlarge">
+			</div>
+			
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary">Sign In!</button>
+		<button class="btn" data-dismiss="modal">Cancel</button>
+	</div>
+
+	#{/form}
+</div>

@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 <div class="row span10 well">
-#{form @Account.createAccount(), class:'span4', method:'POST'}
+#{form @Account.createAccount(), style:'border-right:solid 1px; padding-right:55px;', class:'span4', method:'POST'}
 	<fieldset>
 		<legend>Create Account</legend>
 		<div class="control-group">
@@ -18,8 +18,7 @@
 		</div>
 	</fieldset>
 #{/form}
-<span class="span1" ></span>
-#{form @Account.createAccount(), style:'border-left:solid 1px; padding-left:50px;', class:'span4', method:'POST'}
+#{form @Account.createAccount(), class:'span4 offset1', method:'POST'}
 	<fieldset>
 		<legend>Already have one?</legend>
 		<div class="control-group">

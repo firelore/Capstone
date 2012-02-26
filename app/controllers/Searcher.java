@@ -13,8 +13,10 @@ import play.modules.search.*;
 public class Searcher extends Controller {
 	public static void searchBand(String query) {
 		Query q = Search.search(query, Band.class);
+		System.out.println(q.toString());
 		q.orderBy("bandName");
 		List<Band> bands = q.fetch();
+		
 		render(bands);
 	}
 }
