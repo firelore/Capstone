@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
-
-#{form @Account.createAccount(), class:'navbar-search well', method:'POST'}
+<div class="row span10 well">
+#{form @Account.createAccount(), class:'span4', method:'POST'}
 	<fieldset>
 		<legend>Create Account</legend>
 		<div class="control-group">
@@ -18,3 +18,22 @@
 		</div>
 	</fieldset>
 #{/form}
+<span class="span1" ></span>
+#{form @Account.createAccount(), style:'border-left:solid 1px; padding-left:50px;', class:'span4', method:'POST'}
+	<fieldset>
+		<legend>Already have one?</legend>
+		<div class="control-group">
+			<label class="control-label" for="email">Email address:</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="email">
+			</div>
+			<label class="control-label" for="password">Password:</label>
+			<div class="controls">
+				<input type="password" id="password" class="input-xlarge">
+			</div>
+			<button class="btn btn-info">Sign In!</button>
+		</div>
+	</fieldset>
+#{/form}
+
+</div>

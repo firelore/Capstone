@@ -14,6 +14,6 @@ public class Account extends Controller {
 	}
 
 	public static void createAccount() {
-
+		render();
 	}
 }

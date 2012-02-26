@@ -1,10 +1,14 @@
-<div class="span2 well">
-	<div class="row-fluid">
-    	<h3>Tickets</h3>
-    </div>
-    <div class="row-fluid">
+	<ul class="nav nav-list span2 well">
+		<li class="nav-header">
+			Featured Concerts
+		</li>
 		#{list items:1..5, as:'i'}
-			Event ${i} <br />
+			<li><a href="#">Event ${i}</a></li>
 		#{/list}
-    </div>
-</div>
+		<li class="nav-header">
+			Genres
+		</li>
+		#{list items:1..5, as:'i'}
+			<li><a href="#">Genre ${i}</a></li>
+		#{/list}
+	</ul>

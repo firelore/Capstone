@@ -1,6 +1,27 @@
 #{extends 'main.html' /}
 #{set title:'Search Results' /}
 
-#{list items:bands, as:'band'}
-	${band.bandName}
-#{/list}
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Band Name</th>
+			<th>Concert</th>
+		</tr>
+	</thead>
+	<tbody>
+		#{list items:bands, as:'band'}
+		<tr>
+			<td>
+				<a href="@{Bands.artist(band.bandName)}">
+					${band.bandName}
+				</a>
+			</td>
+			<td>
+				<a href="@{Events.event(band.concertEvent[0].eventName)}">
+					${band.concertEvent[0].eventName}
+				</a>
+			</td>
+		</tr>
+		#{/list}
+	</tbody>
+</table>
