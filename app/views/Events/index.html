@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title:'Home Grown Productions' /}
+
+#{if firstEvent}
+	<div class="hero-unit">
+		<h1><a href="@{Events.event(firstEvent.eventName)}">${firstEvent.eventName}</a></h1>
+		<p> ${firstEvent.eventDate.format('MMMM d, yy')}
+			${firstEvent.eventDate.format('h:mma')}
+		</p>
+		<p>
+			Artists:
+			#{list items:firstEvent.bands, as:'band'}
+				<a href="@{Bands.artist(band.bandName)}">${band.bandName}</a>
+					#{if firstEvent.bands.size() > 1 && band != firstEvent.bands.last()}
+						| 
+					#{/if}
+			#{/list}
+		</p>
+		<p>
+			<a class="btn btn-primary" href="@{Events.event(firstEvent.eventName)}">
+				View Event Details
+			</a>
+		</p>
+	</div>
+#{/if}
+
+#{if allEvents}
+	<p>
+		<h2>Other Upcoming Events</h2>
+	</p>
+
+	#{list items:allEvents, as:'event'}
+		<div class="well">
+			<h3><a href="@{Events.event(event.eventName)}">${event.eventName}</a></h3>
+			<p>
+				${event.eventDate.format('MMMM d, yy')} 
+				${firstEvent.eventDate.format('h:mma')}
+			</p>
+			<p>
+				#{list items:event.bands, as:'band'}
+					<a href="@{Bands.artist(band.bandName)}">${band.bandName}</a>
+					#{if event.bands.size() > 1 && band != event.bands.last()}
+						| 
+					#{/if}
+				#{/list}
+			</p>
+		</div>
+	#{/list}
+#{/if}

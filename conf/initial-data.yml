@@ -1,0 +1,97 @@
+user.UserProfile(bobProfile):
+    address:                123 W Sesame Street
+    city:                   Melrose
+    state:                  MN
+    zipCode:                56352
+
+user.UserLogin(bob):
+    email:                  bob@gmail.com
+    password:               secret
+    accountInformation:     bobProfile
+
+user.UserLogin(jeff):
+    email:                  jeff@gmail.com
+    password:               secret
+
+user.UserLogin(ed):
+    email:                  ed@gmail.com
+    password:               password
+
+concerts.Band(al):
+    bandName:               Weird Al Yankovich
+
+concerts.Band(megadeth):
+    bandName:               Megadeth
+
+concerts.Band(metallica):
+    bandName:               Metallica
+
+concerts.Band(adele):
+    bandName:               Adele
+
+concerts.Band(tso):
+    bandName:               Trans-Siberian Orchestra
+
+concerts.Band(blindPilot):
+    bandName:               Blind Pilot
+
+concerts.Band(ladyA):
+    bandName:               Lady Antebellum
+
+concerts.Band(msa):
+    bandName:               Mindless Self Indulgence
+
+concerts.Event(ladyant):
+    eventName:              Lady Antebellum
+    eventDate:              2012-06-28 15:00:00 -6
+    genre:                  Folk
+    bands:                  
+                            - ladyA
+
+
+concerts.Event(rockopalypse):
+    eventName:              Rockopalypse
+    eventDate:              2012-04-01 19:30:00 -6
+    genre:                  Rock
+    bands:
+                            - megadeth
+                            - metallica
+                            - adele
+
+concerts.Event(weirdal):
+    eventName:              White and Nerdy
+    eventDate:              2012-05-12 17:30:00 -6
+    genre:                  Comedy
+    bands:
+                            - al
+                            - adele
+
+concerts.Venue(excel):
+    hallName:               Excel Energy Center
+    address1:               199 Kellogg Blvd
+    city:                   St. Paul
+    state:                  MN
+    zipCode:                55102
+    phoneNumber:            (612) 555-5555
+
+concerts.Venue(stateTheatre):
+    hallName:               State Theatre
+    address1:               805 Hennepin Avenue
+    city:                   Minneapolis
+    state:                  MN
+    zipCode:                55402
+    phoneNumber:            (612) 123-4567
+
+concerts.Venue(kiva):
+    hallName:               Kiva Auditorium
+    address1:               401 2nd Street NW
+    city:                   Albuquerque
+    state:                  NM
+    zipCode:                87102
+
+concerts.Venue(patriot):
+    hallName:               Patriot Center
+    address1:               4400 University Dr
+    city:                   Fairfax
+    state:                  VA
+    zipCode:                22030
