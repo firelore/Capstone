@@ -5,12 +5,15 @@ import javax.persistence.*;
 
 import play.db.jpa.*;
 import play.data.validation.*;
+import play.modules.search.*;
 
+@Indexed
 @Entity
 public class Venue extends Model {
 	@ManyToMany()
 	public List<Event> events;
 
+	@Field
 	public String hallName;
 	public String address1;
 	public String city;

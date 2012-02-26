@@ -5,9 +5,12 @@ import javax.persistence.*;
 
 import play.db.jpa.*;
 import play.data.validation.*;
+import play.modules.search.*;
 
+@Indexed
 @Entity
 public class Band extends Model {
+	@Field
 	public String bandName;
 
 	@ManyToMany(mappedBy="bands", cascade=CascadeType.PERSIST)

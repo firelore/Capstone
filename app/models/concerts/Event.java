@@ -5,7 +5,9 @@ import javax.persistence.*;
 
 import play.db.jpa.*;
 import play.data.validation.*;
+import play.modules.search.*;
 
+@Indexed
 @Entity
 public class Event extends Model {
 	@ManyToMany
@@ -14,8 +16,13 @@ public class Event extends Model {
 	@ManyToMany(mappedBy="events", cascade=CascadeType.PERSIST)
 	public List<Venue> venues;
 
+	@Field
 	public String eventName;
+	
+	@Field
 	public Date eventDate;
+
+	@Field
 	public String genre;
 
 	public Event() {}

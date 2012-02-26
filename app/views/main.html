@@ -15,33 +15,34 @@
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="brand" href="@{Application.index}">
+                   <a class="brand" href="@{Application.index}">
                         Home Grown Productions
-                    </a>
+                    </a> 
                     <div class="nav-collapse">
                         <ul class="nav">
                             <li><a href="@{Application.index}">Home</a></li>
                             <li><a href="@{Events.index}">All Shows</a></li>
-
                         </ul>
                         <form class="navbar-search"
                             action="" placeholder="Search">
-                            <input class="search-query span3" type="text" placeholder="Search">
+                            <input id="input-append" class="search-query span3" type="text" placeholder="Search">
+                            <i class="icon-search icon-white add-on"></i>
                         </form>
                         <ul class="nav pull-right" style="width:250px;">
                             <li><a href="#">Shopping Cart</a></li>
                             <li class="divider-vertical"></li>
                             <li class="dropdown"><a href="#">Account</a></li>
-
-                            </ul>
                         </ul>
                     </div>
                 </div>
                 
             </div>
         </div>
-        <div id="container">
-            #{doLayout /}
+        <div id="container-fluid" class="row-fluid">
+            #{sidebar /}
+            <div class="span9">
+                #{doLayout /}
+            </div>
         </div>
     </body>
 </html>
