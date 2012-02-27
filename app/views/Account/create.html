@@ -1,38 +1,45 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 <div class="row span10 well">
-#{form @Account.createAccount(), style:'border-right:solid 1px; padding-right:55px;', class:'span4', method:'POST'}
+<form action="@{Account.createAccount(email, password)}" 
+	style="border-right:solid 1px; padding-right:55px;" 
+	class="span4" method="POST">
 	<fieldset>
 		<legend>Create Account</legend>
+		#{ifErrors}
+			Oops, the form has errors!
+		#{/ifErrors}
 		<div class="control-group">
 			<label class="control-label" for="email">Email address:</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" id="email">
+				<input type="text" class="input-xlarge" 
+					id="email" name="email" value="${flash.email}">
 			</div>
 			<label class="control-label" for="password">Password:</label>
 			<div class="controls">
-				<input type="password" id="password" class="input-xlarge">
+				<input type="password" id="password" name="password" 
+					class="input-xlarge" value="${flash.password}">
 			</div>
 			<button class="btn btn-primary">Create!</button>
 			<button class="btn btn-danger">Cancel</button>
 		</div>
 	</fieldset>
-#{/form}
-#{form @Account.createAccount(), class:'span4 offset1', method:'POST'}
+</form>
+<form action="@{Account.createAccount(s_email, s_password)}" class="span4 offset1">
 	<fieldset>
 		<legend>Already have one?</legend>
 		<div class="control-group">
-			<label class="control-label" for="email">Email address:</label>
+			<label class="control-label" for="s_email">Email address:</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" id="email">
+				<input type="text" class="input-xlarge" id="s_email" name="s_email>
 			</div>
-			<label class="control-label" for="password">Password:</label>
+			<label class="control-label" for="s_password">Password:</label>
 			<div class="controls">
-				<input type="password" id="password" class="input-xlarge">
+				<input type="password" id="s_password" name="s_password" class="input-xlarge">
 			</div>
 			<button class="btn btn-info">Sign In!</button>
 		</div>
 	</fieldset>
-#{/form}
+</form>
 
 </div>
