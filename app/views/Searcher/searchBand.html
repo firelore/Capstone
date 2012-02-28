@@ -6,10 +6,12 @@
 		<tr>
 			<th>Band Name</th>
 			<th>Concert</th>
+			<th>Event Date and Time</th>
 		</tr>
 	</thead>
 	<tbody>
 		#{list items:bands, as:'band'}
+			#{list items:band.concertEvent, as:'event'}
 		<tr>
 			<td>
 				<a href="@{Bands.artist(band.bandName)}">
@@ -17,11 +19,16 @@
 				</a>
 			</td>
 			<td>
-				<a href="@{Events.event(band.concertEvent[0].eventName)}">
-					${band.concertEvent[0].eventName}
+				<a href="@{Events.event(band.concertEvent[event_index-1].eventName)}">
+					${band.concertEvent[event_index-1].eventName}
 				</a>
 			</td>
+			<td>
+				${band.concertEvent[event_index-1].eventDate.format('MMMM d, yyyy')}
+				${band.concertEvent[event_index-1].eventDate.format('h:mma')}
+			</td>
 		</tr>
+		#{/list}
 		#{/list}
 	</tbody>
 </table>

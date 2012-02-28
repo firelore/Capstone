@@ -14,6 +14,7 @@ public class Venue extends Model {
 	public List<Event> events;
 
 	@Field
+	@Required
 	public String hallName;
 	public String address1;
 	public String city;
@@ -32,5 +33,9 @@ public class Venue extends Model {
 		this.state = state;
 		this.zipCode = zipCode;
 		this.phoneNumber = phoneNumber;
+	}
+
+	public String toString() {
+		return hallName;
 	}
 }

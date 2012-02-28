@@ -1,9 +1,32 @@
 #{extends 'main.html' /}
 #{set title:'Home Grown - ' + event.eventName /}
 
-<h1>${event.eventName}</h1>
-<p>
-	${event.eventDate.format('d MMMM, yyyy')}
-	${event.eventDate.format('h:mma')}
-	${event?.venues[0]?.hallName}
-</p>
+<div class="page-header">
+	<h1>${event.eventName}</h1>
+	#{list items:event.bands, as:'band'}
+		<a href="@{Searcher.searchBand(band.bandName)}">
+			${band.bandName}
+		</a>
+		#{if event.bands.size() > 1 && band != event.bands.last()}
+			| 
+		#{/if}
+	#{/list}
+</div>
+<div class="row-fluid">
+	<div class="span6">
+		<p>
+			<strong>${event.eventDate.format('MMMM d, yyyy')}</strong>
+			<em>${event.eventDate.format('h:mma')}</em>
+			${event?.venues[0]?.hallName}
+		</p>
+		<p class="span6">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula fermentum ante nec ullamcorper. In leo libero, mollis nec tristique nec, posuere vel tellus. Etiam tincidunt euismod diam et bibendum. Curabitur aliquet gravida massa vitae sodales. In hac habitasse platea dictumst. Quisque ut ante et odio scelerisque sodales sit amet quis dolor. Nunc posuere eleifend purus, vitae sodales elit cursus a. Ut non tortor tellus. Donec pulvinar dolor ac dolor feugiat lobortis. Fusce tempor faucibus risus a consequat. 
+		</p>
+	</div>
+	<div class="span3 offset1">
+		<div class="row-fluid">
+			<img src="http://cambelt.co/400x200/${event.eventName}?color=a39653,eeeeee" />
+			<button class="span6 btn btn-primary">Buy Tickets!</button>
+		</div>
+	</div>
+</div>

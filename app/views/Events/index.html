@@ -2,15 +2,20 @@
 #{set title:'Home Grown Productions' /}
 
 #{if firstEvent}
-	<div class="hero-unit">
-		<h1><a href="@{Events.event(firstEvent.eventName)}">${firstEvent.eventName}</a></h1>
-		<p> ${firstEvent.eventDate.format('MMMM d, yy')}
-			${firstEvent.eventDate.format('h:mma')}
+<div class="row-fluid offset1">
+	<div class="hero-unit span7">
+		<a href="@{Events.event(firstEvent.eventName)}">
+		<h1>${firstEvent.eventName}</h1>
+		</a>
+		<p> <strong>${firstEvent.eventDate.format('MMMM d, yy')}</strong>
+			<em>${firstEvent.eventDate.format('h:mma')}</em>
 		</p>
 		<p>
 			Artists:
 			#{list items:firstEvent.bands, as:'band'}
-				<a href="@{Bands.artist(band.bandName)}">${band.bandName}</a>
+				<a href="@{Searcher.searchBand(band.bandName)}">
+					${band.bandName}
+				</a>
 					#{if firstEvent.bands.size() > 1 && band != firstEvent.bands.last()}
 						| 
 					#{/if}
@@ -22,28 +27,35 @@
 			</a>
 		</p>
 	</div>
+</div>
 #{/if}
 
 #{if allEvents}
+<div class="row-fluid">
 	<p>
 		<h2>Other Upcoming Events</h2>
 	</p>
 
+	
 	#{list items:allEvents, as:'event'}
-		<div class="well">
-			<h3><a href="@{Events.event(event.eventName)}">${event.eventName}</a></h3>
+		<div class="well span3">
+			<a href="@{Events.event(event.eventName)}"><h3>${event.eventName}</h3></a>
 			<p>
-				${event.eventDate.format('MMMM d, yy')} 
-				${firstEvent.eventDate.format('h:mma')}
+				<strong>${event.eventDate.format('MMMM d, yy')}</strong>
+				<em>${firstEvent.eventDate.format('h:mma')}</em>
 			</p>
 			<p>
 				#{list items:event.bands, as:'band'}
-					<a href="@{Bands.artist(band.bandName)}">${band.bandName}</a>
+					<a href="@{Searcher.searchBand(band.bandName)}">
+						${band.bandName}
+					</a>
 					#{if event.bands.size() > 1 && band != event.bands.last()}
 						| 
 					#{/if}
 				#{/list}
 			</p>
+			<a class="btn btn-primary" href="@{Events.event(event.eventName)}">Learn more</a>
 		</div>
 	#{/list}
+	</div>
 #{/if}

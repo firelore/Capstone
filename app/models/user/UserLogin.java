@@ -15,6 +15,7 @@ public class UserLogin extends Model {
 	@Required
 	public String password;
 
+	@OneToOne
 	public UserProfile accountInformation;
 
 	public UserLogin(String email, String password) {

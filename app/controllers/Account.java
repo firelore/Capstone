@@ -30,4 +30,14 @@ public class Account extends Controller {
 			System.out.println(email + " does not exist!");
 		}
 	}
+
+	public static void signin(@Required @Email String email,
+							  @Required String password) {
+		if (validation.hasErrors()) {
+			params.flash();
+			validation.keep();
+			Application.index();
+		}
+
+	}
 }

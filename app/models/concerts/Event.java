@@ -20,9 +20,11 @@ public class Event extends Model {
 	public List<Ticket> tickets;
 
 	@Field
+	@Required
 	public String eventName;
 	
 	@Field
+	@InFuture
 	public Date eventDate;
 
 	@Field
@@ -32,5 +34,9 @@ public class Event extends Model {
 	public Event(String eventName, Date eventDate) {
 		this.eventName = eventName;
 		this.eventDate = eventDate;
+	}
+
+	public String toString() {
+		return eventName;
 	}
 }

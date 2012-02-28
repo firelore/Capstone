@@ -41,6 +41,59 @@ concerts.Band(ladyA):
 concerts.Band(msa):
     bandName:               Mindless Self Indulgence
 
+concerts.Band(coldplay):
+    bandName:               Coldplay
+
+concerts.Band(lmfao):
+    bandName:               LMFAO
+
+concerts.Band(nickelback):
+    bandName:               Nickelback
+
+concerts.Band(vanhalen):
+    bandName:               Van Halen
+
+concerts.Band(jayz):
+    bandName:               Jay-Z
+
+concerts.Band(lilwayne):
+    bandName:               Lil Wayne
+
+concerts.Band(chrisbrown): 
+    bandName:               Chris Brown
+
+concerts.Event(thesoldouttour):
+    eventName:              The Sold Out Tour
+    eventDate:              2012-07-04 17:00:00 -6
+    genre:                  Hip-Hop
+    bands:   
+                            - jayz
+                            - lilwayne
+
+concerts.Event(lmfaotour):
+    eventName:              LMFAO Tour
+    eventDate:              2012-05-15 15:00:00 -6
+    genre:                  Hip-Hop
+    bands:         
+                            - lmfao
+                            - chrisbrown
+
+concerts.Event(nickelbacktour):
+    eventName:              Nickelback Tour
+    eventDate:              2012-06-21 15:00:00 -6
+    genre:                  Rock
+    bands:
+                            - nickelback
+                            - vanhalen
+
+concerts.Event(coldplaytour):
+    eventName:              Coldplay Tour
+    eventDate:              2012-08-18 19:00:00 -6
+    genre:                  Rock
+    bands:
+                            - coldplay
+
+
 concerts.Event(ladyant):
     eventName:              Lady Antebellum
     eventDate:              2012-06-28 15:00:00 -6

@@ -4,6 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class UserProfile extends Model {
@@ -12,6 +13,10 @@ public class UserProfile extends Model {
 	public String state;
 	public String zipCode;
 
+	@OneToOne(mappedBy="accountInformation")
+	@Required
+	public UserLogin login;
+	
 	public UserProfile() {}
 	
 	public UserProfile(String address, String city, String state, String zipCode) {
@@ -19,5 +24,13 @@ public class UserProfile extends Model {
 		this.city = city;
 		this.state = state;
 		this.zipCode = zipCode;
+	}
+
+	public String toString() {
+		if (login != null) {
+			return login.email;
+		} else {
+			return id.toString();
+		}
 	}
 }

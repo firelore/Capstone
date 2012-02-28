@@ -1,3 +1,30 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+bandName=Name of Artist/Band
+bands=Artists/Bands playing
+eventName=Event Name
+eventDate=Date of Event
+genre=Genre
+price=Sale Price
+quantity=Quantity
+event=Event for
+email=Email
+password=Password
+address=Street address
+city=City
+state=State
+zipCode=Zip code
+events=Events held
+hallName=Concert hall name
+address1=Street address
+phoneNumber=Phone number
+AdminBands=Bands
+AdminEvents=Events
+AdminTickets=Tickets
+AdminUserLogins=User logins
+AdminUserProfiles=User profiles
+AdminVenues=Venues
+accountInformation=User profile
+UserLogin=user login information
+UserProfile=user Profile

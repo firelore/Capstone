@@ -1,0 +1,14 @@
+<div class="row-fluid">
+	<div class="span12">
+	<a href="@{Events.event(_arg.eventName)}">
+		<img class="span5 offset1"
+			src="http://cambelt.co/400x200/${_arg.eventName}?color=234653,eeeeee" />
+	</a>
+	<div class="span2 offset1">
+		<h2>
+			${_arg.eventDate.format('MMM d, yyyy')}
+		</h2>
+		<p><em>${_arg.eventDate.format('h:mm a')}</em></p>
+	<a class="btn" href="@{Events.event(_arg.eventName)}">Get Tickets</a>
+	</div></div>
+</div>

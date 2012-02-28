@@ -11,6 +11,7 @@ import play.modules.search.*;
 @Entity
 public class Band extends Model {
 	@Field
+	@Required
 	public String bandName;
 
 	@ManyToMany(mappedBy="bands", cascade=CascadeType.PERSIST)
@@ -18,5 +19,9 @@ public class Band extends Model {
 
 	public Band(String bandName) {
 		this.bandName = bandName;
+	}
+
+	public String toString() {
+		return bandName;
 	}
 }

@@ -1,5 +1,17 @@
-<h2>Featured Concert</h2>
-<div class="well span8">
-	<img src="http://cambelt.co/400x200/No+Image+Available?color=234653,eeeeee" />
-	<a class="btn">Get Tickets</a>
+<div>
+	<h2 class="offset3">Featured Concerts</h2>
+	<div class="well span10">
+		<div id="featured" class="carousel">
+			<!-- carousel items -->
+			<div class="carousel-inner row">
+				<div class="active item">#{concert _arg[0] /}</div>
+				<div class="item">#{concert _arg[1] /}</div>
+				<div class="item">#{concert _arg[2] /}</div>
+			</div>
+			<!-- Carousel nav -->
+			<a class="carousel-control left" href="#featured" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#featured" data-slide="next">&rsaquo;</a>
+		</div>
+		
+	</div>
 </div>

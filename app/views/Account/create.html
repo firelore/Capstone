@@ -47,28 +47,8 @@
 </form>
 <form action="@{Account.createAccount(s_email, s_password)}" class="span4 offset1">
 	<fieldset>
-		#{ifErrors}
-		<legend style="margin-bottom:-5px;">
-			Already have one?
-		<p class="label label-important">
-			Uh-oh, something wasn't filled in right!
-		</p>
-		</legend>
-		#{/ifErrors}
-		#{else}<legend>Already have one?</legend>#{/else}
-		<div class="control-group">
-			<label class="control-label" for="s_email">Email address:</label>
-			<div class="controls">
-				<input type="text" class="input-xlarge" id="s_email" name="s_email">
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="s_password">Password:</label>
-			<div class="controls">
-				<input type="password" id="s_password" name="s_password" class="input-xlarge">
-			</div>
-		</div>
-		<button class="btn btn-info">Sign In!</button>
+		<legend>Already have one?</legend>
+		<a data-toggle="modal" data-backdrop="true" data-controls-modal="signin-modal" href="#signin-modal" class="btn btn-info">Sign In!</a>
 	</fieldset>
 </form>
 
