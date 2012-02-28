@@ -29,6 +29,8 @@ public class Account extends Controller {
 		} else {
 			System.out.println(email + " does not exist!");
 		}
+
+		Application.index();
 	}
 
 	public static void signin(@Required @Email String email,
