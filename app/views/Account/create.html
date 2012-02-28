@@ -5,40 +5,70 @@
 	style="border-right:solid 1px; padding-right:55px;" 
 	class="span4" method="POST">
 	<fieldset>
-		<legend>Create Account</legend>
 		#{ifErrors}
-			Oops, the form has errors!
+		<legend style="margin-bottom:-5px;">Create Account
+		<p class="label label-important">
+			Uh-oh, something wasn't filled in right!
+		</p>
+		</legend>
 		#{/ifErrors}
-		<div class="control-group">
-			<label class="control-label" for="email">Email address:</label>
-			<div class="controls">
-				<input type="text" class="input-xlarge" 
-					id="email" name="email" value="${flash.email}">
+		#{else}<legend>Create Account</legend>#{/else}
+			#{ifError 'email'}
+				<div class="control-group error">
+					<label class="control-label" for="email">Email address: *#{error 'email' /}</label>
+					<div class="controls">						
+			#{/ifError}
+			#{else}
+				<div class="control-group">
+					<label class="control-label" for="email">Email address:</label>
+					<div class="controls">
+			#{/else}
+					<input type="text" class="input-xlarge" 
+						id="email" name="email" value="${flash.email}">
+				</div>
 			</div>
-			<label class="control-label" for="password">Password:</label>
-			<div class="controls">
-				<input type="password" id="password" name="password" 
-					class="input-xlarge" value="${flash.password}">
+			#{ifError 'password'}
+				<div class="control-group error">
+				<label class="control-label" for="password">Password: *#{error 'password' /}</label>
+				<div class="controls">
+			#{/ifError}
+			#{else}
+				<div class="control-group">
+				<label class="control-label" for="password">Password:</label>
+				<div class="controls">
+			#{/else}
+					<input type="password" id="password" name="password" 
+						class="input-xlarge" value="${flash.password}">
+				</div>
 			</div>
 			<button class="btn btn-primary">Create!</button>
 			<button class="btn btn-danger">Cancel</button>
-		</div>
 	</fieldset>
 </form>
 <form action="@{Account.createAccount(s_email, s_password)}" class="span4 offset1">
 	<fieldset>
-		<legend>Already have one?</legend>
+		#{ifErrors}
+		<legend style="margin-bottom:-5px;">
+			Already have one?
+		<p class="label label-important">
+			Uh-oh, something wasn't filled in right!
+		</p>
+		</legend>
+		#{/ifErrors}
+		#{else}<legend>Already have one?</legend>#{/else}
 		<div class="control-group">
 			<label class="control-label" for="s_email">Email address:</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" id="s_email" name="s_email>
+				<input type="text" class="input-xlarge" id="s_email" name="s_email">
 			</div>
+		</div>
+		<div class="control-group">
 			<label class="control-label" for="s_password">Password:</label>
 			<div class="controls">
 				<input type="password" id="s_password" name="s_password" class="input-xlarge">
 			</div>
-			<button class="btn btn-info">Sign In!</button>
 		</div>
+		<button class="btn btn-info">Sign In!</button>
 	</fieldset>
 </form>
 

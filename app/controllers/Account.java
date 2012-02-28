@@ -15,7 +15,7 @@ public class Account extends Controller {
 		render();
 	}
 
-	public static void createAccount(@Required String email, 
+	public static void createAccount(@Required @Email String email, 
 									 @Required String password) {
 
 		if (validation.hasErrors()) {
